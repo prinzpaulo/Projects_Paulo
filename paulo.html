@@ -1,0 +1,101 @@
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Using Inner HTML</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            color: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        table {
+            width: 50%;
+            border-collapse: collapse;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            background-color: #fff;
+            border-radius: 8px;
+        }
+        th, td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+        th {
+            background-color: #4c56af;
+            color: white;
+            font-size: 1.1em;
+        }
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+        tr:hover {
+            background-color: #e0e0e0;
+        }
+        td {
+            font-size: 1em;
+        }
+    </style>
+<body>
+    <table border="1">
+        <tr>
+            <th>Subject</th>
+            <th>Grade</th>
+        </tr>
+        <tr>
+            <td>APPDEV</td>
+            <td id="grade1">93</td>
+        </tr>
+        <tr>
+            <td>OPSYST1</td>
+            <td id="grade2">95</td>
+        </tr>
+        <tr>
+            <td>MOBCOM1</td>
+            <td id="grade3">91</td>
+        </tr>
+        <tr>
+            <td>Average</td>
+            <td id="gradeavg"></td>
+        </tr>
+        <tr>
+            <td>Remark</td>
+            <td id="remark"></td>
+        </tr>
+    </table>
+    <script>
+        var grade3;
+        var gradeavg;
+        grade3 = parseInt(document.getElementById("grade3").innerHTML);
+        grade2 = parseInt(document.getElementById("grade2").innerHTML);
+        grade1 = eval(document.getElementById("grade1").innerHTML);
+
+        gradeavg = document.getElementById("gradeavg").innerHTML = ((grade1+grade2+grade3)/3)
+        console.log(gradeavg);
+
+
+        var remark;
+        if(gradeavg <= 74){
+            alert("Your performance is Poor");
+            remark = "Poor";
+        }else if(gradeavg >= 75 && gradeavg <= 80){
+            alert("Your performance is Fair");
+            remark = "Fair";
+        }else if(gradeavg >= 81 && gradeavg <= 89){
+            alert("Your performance is Good");
+            remark = "Good";
+        }else if(gradeavg >= 90 && gradeavg <=99){
+            alert("Your performance is Excellent");
+            remark = "Excellent"
+        }
+        document.getElementById("remark").innerHTML = remark;
+
+    </script>
+</body>
+</html>
