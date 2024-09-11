@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="seaCreatures"></p>
+    <p id="popSeaCreature"></p>
+    <p id="seaCreaturesPopped"></p>
+    <p id="sliceSeaCreatures"></p>
+    <p id="pushSeaCreatures"></p>
+    <p id="seaCreaturesPushed"></p>
+    <p id="concatSeaCreatures"></p>
+
+    <script>
+    let seaCreatures = ["tropical fish", "whale", "shrimp", "shark", "turtle"]
+    let landCreatures = ["horse", "dog", "lion", "monkey"]
+    let skyCreatures = ["parrot", "hawk", "eagle", "vulture"]
+    var popSeaCreature;
+    var sliceSeaCreatures;
+    var pushSeaCreatures;
+    var concatSeaCreatures;
+    seaCreatures = document.getElementById("seaCreatures").innerHTML = seaCreatures;
+    popseaCreature = document.getElementById("popSeaCreature").innerHTML = seaCreatures.pop();
+    seaCreatures = document.getElementById("seaCreaturesPopped").innerHTML = seaCreatures;
+    sliceSeaCreatures = document.getElementById("sliceSeaCreatures").innerHTML = seaCreatures.slice(1, 3);
+    pushSeaCreatures = document.getElementById("pushSeaCreatures").innerHTML = seaCreatures.push("crab");
+    seaCreatures = document.getElementById("seaCreaturesPushed").innerHTML = seaCreatures;
+    concatSeaCreatures = document.getElementById("concatSeaCreatures").innerHTML = seaCreatures.concat(landCreatures);
+    </script>
+</body>
+</html>
